@@ -1,6 +1,7 @@
 FROM ubuntu
 RUN apt-get update
 RUN apt-get -y install apache2
-ADD ./1.html /var/www/html
+ADD sample.html /var/www/html
+CMD apachectl -D FOREGROUND
 ENTRYPOINT apachectl -D FOREGROUND
-ENV name assignment5
+ENV name apache2
